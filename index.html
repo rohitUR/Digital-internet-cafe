@@ -34,7 +34,6 @@
 
     <!-- Hero Section -->
     <section class="relative pt-32 pb-20 md:pt-40 md:pb-28 overflow-hidden">
-        <!-- Glow background effects -->
         <div class="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[350px] md:w-[600px] h-[350px] md:h-[600px] bg-blue-600/20 rounded-full blur-[120px] pointer-events-none"></div>
         <div class="absolute top-1/3 right-10 w-[250px] h-[250px] bg-indigo-600/10 rounded-full blur-[100px] pointer-events-none"></div>
 
@@ -176,7 +175,7 @@
             </p>
             <ul class="list-disc pl-5 space-y-1 text-slate-300">
                 <li>Form ki official <strong>Government Fee</strong> alag se deni hogi jo official portal par lagti hai.</li>
-                <li>Form fill karte hue  government fee/Application fee turant deni hogi (aur service fee ka <strong class="text-white">Half Payment (Advance)</strong> dena hoga.</li>
+                <li>Form fill karne se pehle government fee aur service fee ka <strong class="text-white">Half Payment (Advance)</strong> dena hoga.</li>
                 <li>Baaki ka bacha hua aadha charge form successfully complete hone ke baad dena hoga.</li>
             </ul>
         </div>
@@ -240,16 +239,29 @@
                 </button>
             </form>
 
-            <!-- UPI QR Code Section -->
+            <!-- UPI Payment Section (QR + Direct Payment Apps for Single Phone Users) -->
             <div class="mt-14 border-t border-slate-800 pt-10 text-center">
-                <h3 class="text-xl font-bold text-white mb-2">Advance Payment (UPI QR Code)</h3>
-                <p class="text-slate-400 text-sm mb-6">Advance (Half Payment) scan karke pay karein aur screenshot WhatsApp par share karein.</p>
-                <div class="inline-block p-6 bg-slate-950 border border-slate-800 rounded-3xl shadow-inner">
-                    <div class="w-48 h-48 bg-slate-900 flex flex-col items-center justify-center text-slate-400 rounded-2xl mb-3 border border-dashed border-slate-700">
-                        <i class="fa-solid fa-qrcode text-4xl mb-2 text-blue-400"></i>
-                        <span class="text-xs text-center px-2">[ Yahan Apna UPI QR Code Lagayein ]</span>
+                <h3 class="text-xl font-bold text-white mb-2">Advance Payment</h3>
+                <p class="text-slate-400 text-sm mb-6">Agar aap mobile par hain toh direct app se pay karein, ya PC par hain toh QR scan karein.</p>
+                
+                <div class="inline-block p-6 bg-slate-950 border border-slate-800 rounded-3xl shadow-inner max-w-sm w-full">
+                    <!-- QR Code Image -->
+                    <img src="qr.jpg" alt="UPI QR Code" class="w-48 h-48 object-cover rounded-2xl mx-auto mb-4 border border-slate-700 shadow-md">
+                    
+                    <p class="text-xs font-bold text-slate-300 tracking-wider mb-4">UPI ID: <span class="text-blue-400">6396166274@paytm</span></p>
+
+                    <!-- Direct Payment Apps Buttons (Best for single phone users) -->
+                    <div class="grid grid-cols-3 gap-2 pt-2 border-t border-slate-800">
+                        <a href="upi://pay?pa=6396166274@paytm&pn=DigitalCyberCafe&cu=INR" class="bg-indigo-600/20 hover:bg-indigo-600/30 border border-indigo-500/30 text-indigo-300 py-2.5 rounded-xl font-bold text-xs transition flex flex-col items-center gap-1">
+                            <i class="fa-solid fa-mobile-screen text-sm"></i> PhonePe
+                        </a>
+                        <a href="upi://pay?pa=6396166274@paytm&pn=DigitalCyberCafe&cu=INR" class="bg-blue-600/20 hover:bg-blue-600/30 border border-blue-500/30 text-blue-300 py-2.5 rounded-xl font-bold text-xs transition flex flex-col items-center gap-1">
+                            <i class="fa-solid fa-wallet text-sm"></i> GooglePay
+                        </a>
+                        <a href="upi://pay?pa=6396166274@paytm&pn=DigitalCyberCafe&cu=INR" class="bg-sky-600/20 hover:bg-sky-600/30 border border-sky-500/30 text-sky-300 py-2.5 rounded-xl font-bold text-xs transition flex flex-col items-center gap-1">
+                            <i class="fa-solid fa-qrcode text-sm"></i> Paytm / UPI
+                        </a>
                     </div>
-                    <p class="text-xs font-bold text-slate-300 tracking-wider">UPI ID: <span class="text-blue-400">6396166274@paytm</span></p>
                 </div>
             </div>
 
