@@ -239,27 +239,27 @@
                 </button>
             </form>
 
-            <!-- UPI Payment Section (QR + Direct Payment Apps for Single Phone Users) -->
+            <!-- UPI Payment Section (QR + Direct Payment Apps with Correct UPI ID) -->
             <div class="mt-14 border-t border-slate-800 pt-10 text-center">
                 <h3 class="text-xl font-bold text-white mb-2">Advance Payment</h3>
                 <p class="text-slate-400 text-sm mb-6">Agar aap mobile par hain toh direct app se pay karein, ya PC par hain toh QR scan karein.</p>
                 
                 <div class="inline-block p-6 bg-slate-950 border border-slate-800 rounded-3xl shadow-inner max-w-sm w-full">
-                    <!-- QR Code Image -->
+                    <!-- QR Code Image (Make sure you uploaded 'qr.jpg' in GitHub repo) -->
                     <img src="qr.jpg" alt="UPI QR Code" class="w-48 h-48 object-cover rounded-2xl mx-auto mb-4 border border-slate-700 shadow-md">
                     
                     <p class="text-xs font-bold text-slate-300 tracking-wider mb-4">UPI ID: <span class="text-blue-400">kumarrohit12451-2@oksbi</span></p>
 
-                    <!-- Direct Payment Apps Buttons (Best for single phone users) -->
+                    <!-- Direct Payment Apps Buttons with Correct UPI ID -->
                     <div class="grid grid-cols-3 gap-2 pt-2 border-t border-slate-800">
-                        <a href="upi://pay?pa=6396166274@paytm&pn=DigitalCyberCafe&cu=INR" class="bg-indigo-600/20 hover:bg-indigo-600/30 border border-indigo-500/30 text-indigo-300 py-2.5 rounded-xl font-bold text-xs transition flex flex-col items-center gap-1">
+                        <a href="upi://pay?pa=kumarrohit12451-2@oksbi&pn=DigitalCyberCafe&cu=INR" class="bg-indigo-600/20 hover:bg-indigo-600/30 border border-indigo-500/30 text-indigo-300 py-2.5 rounded-xl font-bold text-xs transition flex flex-col items-center gap-1">
                             <i class="fa-solid fa-mobile-screen text-sm"></i> PhonePe
                         </a>
-                        <a href="upi://pay?pa=6396166274@paytm&pn=DigitalCyberCafe&cu=INR" class="bg-blue-600/20 hover:bg-blue-600/30 border border-blue-500/30 text-blue-300 py-2.5 rounded-xl font-bold text-xs transition flex flex-col items-center gap-1">
+                        <a href="upi://pay?pa=kumarrohit12451-2@oksbi&pn=DigitalCyberCafe&cu=INR" class="bg-blue-600/20 hover:bg-blue-600/30 border border-blue-500/30 text-blue-300 py-2.5 rounded-xl font-bold text-xs transition flex flex-col items-center gap-1">
                             <i class="fa-solid fa-wallet text-sm"></i> GooglePay
                         </a>
-                        <a href="upi://pay?pa=6396166274@paytm&pn=DigitalCyberCafe&cu=INR" class="bg-sky-600/20 hover:bg-sky-600/30 border border-sky-500/30 text-sky-300 py-2.5 rounded-xl font-bold text-xs transition flex flex-col items-center gap-1">
-                            <i class="fa-solid fa-qrcode text-sm"></i> Other UPI Apps
+                        <a href="upi://pay?pa=kumarrohit12451-2@oksbi&pn=DigitalCyberCafe&cu=INR" class="bg-sky-600/20 hover:bg-sky-600/30 border border-sky-500/30 text-sky-300 py-2.5 rounded-xl font-bold text-xs transition flex flex-col items-center gap-1">
+                            <i class="fa-solid fa-qrcode text-sm"></i> Paytm / UPI
                         </a>
                     </div>
                 </div>
