@@ -28,7 +28,7 @@
             </div>
             <div class="flex items-center gap-2 sm:gap-3">
                 <!-- Admin Open Button -->
-                <button onclick="openAdminModal()" class="text-slate-400 hover:text-white text-xs bg-slate-800 px-2.5 sm:px-3 py-1.5 sm:py-2 rounded-xl border border-slate-700 transition flex items-center gap-1.5">
+                <button onclick="openAdminModal()" class="text-slate-400 hover:text-white text-xs bg-slate-800 px-2.5 sm:px-3 py-1.5 sm:py-2 rounded-xl border border-slate-700 transition flex items-center gap-1.5 cursor-pointer">
                     <i class="fa-solid fa-lock text-blue-400 text-xs"></i> <span class="hidden xs:inline">Admin</span>
                 </button>
                 <a href="#booking-form" class="bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-500 hover:to-indigo-500 text-white px-3.5 sm:px-5 py-2 sm:py-2.5 rounded-xl font-bold text-xs sm:text-sm shadow-lg shadow-blue-600/25 transition-all">
@@ -38,7 +38,7 @@
         </div>
     </header>
 
-    <!-- LIVE ANNOUNCEMENT BANNER -->
+    <!-- LIVE ANNOUNCEMENT BANNER (Fixed for Mobile & Laptop) -->
     <div id="announcementBanner" class="hidden bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-600 text-white px-3 py-2.5 text-center text-xs sm:text-sm font-semibold shadow-md fixed top-16 sm:top-20 left-0 right-0 z-40 items-center justify-center gap-2 sm:gap-3">
         <span class="bg-white/20 px-2 py-0.5 rounded-full text-[10px] sm:text-xs uppercase tracking-wider animate-pulse whitespace-nowrap">🔥 LIVE UPDATE</span>
         <span id="announcementText" class="truncate">Yaha naye form ka update dikhega...</span>
@@ -359,7 +359,7 @@
         </div>
     </div>
 
-<!-- Footer -->
+    <!-- Footer -->
     <footer class="bg-slate-950 border-t border-slate-900 py-8 text-center text-slate-500 text-xs sm:text-sm">
         <p>&copy; 2026 My Digital Café. All Rights Reserved.</p>
     </footer>
@@ -404,7 +404,7 @@
             }
             localStorage.setItem('siteAnnouncement', text);
             document.getElementById('announcementText').innerText = text;
-            document.getElementById('announcementBanner').classList.0('hidden');
+            document.getElementById('announcementBanner').classList.remove('hidden');
             document.getElementById('announcementBanner').classList.add('flex');
             alert('Update successfully published!');
             closeAdminModal();
@@ -422,6 +422,7 @@
             const serviceSelect = document.getElementById('service').value;
             const otherBox = document.getElementById('otherServiceBox');
             if(serviceSelect === 'Other') {
+                otherBox.classList.remove('head-none'); // fixed
                 otherBox.classList.remove('hidden');
             } else {
                 otherBox.classList.add('hidden');
@@ -443,14 +444,14 @@
 
             if(service === 'Other') {
                 if(!otherServiceText) {
-                    alert('Please enter your form/service nameရှင်');
+                    alert('Please enter your form/service name!');
                     return;
                 }
                 service = `Other: ${otherServiceText}`;
             }
 
             const myWhatsAppNumber = "916396166274"; 
-            const text = `Honor Sir, mujhe form bharwana hai!%0A%0A*Name:* ${name}%0A*Mobile:* ${mobile}%0A*Service:* ${service}%0A*Doc Mode:* ${docMode}%0A*Instructions:* ${message}%0A%0AMaine apne documents aur advance payment ka screenshot bhej diya hai.`;
+            const text = `Hello Sir, mujhe form bharwana hai!%0A%0A*Name:* ${name}%0A*Mobile:* ${mobile}%0A*Service:* ${service}%0A*Doc Mode:* ${docMode}%0A*Instructions:* ${message}%0A%0AMaine apne documents aur advance payment ka screenshot bhej diya hai.`;
 
             const url = `https://wa.me/${myWhatsAppNumber}?text=${text}`;
             window.open(url, '_blank');
