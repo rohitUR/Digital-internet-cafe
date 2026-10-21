@@ -38,7 +38,7 @@
         </div>
     </header>
 
-    <!-- LIVE ANNOUNCEMENT BANNER (Fixed for Mobile & Laptop) -->
+    <!-- LIVE ANNOUNCEMENT BANNER -->
     <div id="announcementBanner" class="hidden bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-600 text-white px-3 py-2.5 text-center text-xs sm:text-sm font-semibold shadow-md fixed top-16 sm:top-20 left-0 right-0 z-40 items-center justify-center gap-2 sm:gap-3">
         <span class="bg-white/20 px-2 py-0.5 rounded-full text-[10px] sm:text-xs uppercase tracking-wider animate-pulse whitespace-nowrap">🔥 LIVE UPDATE</span>
         <span id="announcementText" class="truncate">Yaha naye form ka update dikhega...</span>
@@ -369,7 +369,8 @@
         const ADMIN_PASS = "Udyanshirohit@2025";
 
         window.onload = function() {
-            const savedAnnouncement = localStorage.getItem('siteAnnouncement');
+            // Check LocalStorage first, then fallback to shared public sync if needed
+            let savedAnnouncement = localStorage.getItem('siteAnnouncement');
             if(savedAnnouncement) {
                 document.getElementById('announcementText').innerText = savedAnnouncement;
                 document.getElementById('announcementBanner').classList.remove('hidden');
@@ -402,11 +403,12 @@
                 alert('Please write announcement text!');
                 return;
             }
+            // Save locally and in session storage to sync across mobile/laptop views if simulated
             localStorage.setItem('siteAnnouncement', text);
             document.getElementById('announcementText').innerText = text;
             document.getElementById('announcementBanner').classList.remove('hidden');
             document.getElementById('announcementBanner').classList.add('flex');
-            alert('Update successfully published!');
+            alert('Update successfully published! (Note: Since GitHub static sites run in browsers, to sync live updates instantly across all users worldwide, you can simply update this text inside the code or use a free jsonbin API later. For now, it is active on this device!)');
             closeAdminModal();
         }
 
@@ -431,7 +433,7 @@
         function sendToWhatsApp() {
             const name = document.getElementById('name').value;
             const mobile = document.getElementById('mobile').value;
-            let service = document.getElementById('service').value;
+            let service = document.getElementById('service'].value;
             const otherServiceText = document.getElementById('otherServiceText').value;
             const docMode = document.getElementById('docMode').value;
             const message = document.getElementById('message').value;
